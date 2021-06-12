@@ -1,6 +1,45 @@
 <%- layout('../views/layouts/boilerplate.ejs') %>
 
-<h1>Post a New Burrito, thy taste be judged!</h1>
+<h1 class="text-center mt-3">Tell me 'bout it</h1>
+
+<div class="container">
+    <form action="/burritos" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="burrito[title]" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="picture">Upload</label>
+            <input type="file" class="form-control" id="inputGroupFile01" name="burrito[picture]">
+              
+        </div>
+        <div class="mb-3">
+            <label for="restaurant" class="form-label">Restaurant</label>
+            <input type="text" class="form-control" id="resaurant" name="burrito[restaurant]" required>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="burrito[location]" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" id="price" name="burrito[price]" required>
+            </div>
+        </div>
+        <div class="my-3">
+            <div class="input-group">
+                <span class="input-group-text">Gimme the deets</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<!--
 
 <form action="/burritos" method="POST">
     <div>
@@ -13,8 +52,7 @@
         <label for="title">Picture</label>
         <input type="file" id="picture" name="burrito[picture]" accept="image/*;capture=camera">
     </div>
-    -->
-    
+    ->
     <div>
         <label for="restaurant">Restaurant</label>
         <input type="text" id="restaurant" name="burrito[restaurant]" required>
@@ -39,3 +77,4 @@
         <button>TELL ME BOUT IT</button>
     </div>
 </form>
+-->

@@ -3,15 +3,16 @@
 <h1 class="mx-auto my-3">FEED ME BURRITOS</h1>
 
 <% for(let burrito of burritoList) { %>
-    <div class="col-sm-4 mx-auto px-4">
+    <div class="col-md-5 mx-auto px-4">
+        
         <div class="card mb-3 mt-3">
-            <img src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top"  alt="...">
             <div class="card-body">
                 <h5 class="card-title"><%= burrito.title %></h5>
-                <p class="card-text"><%= burrito.description %></p>
+                <!-- <p class="card-text"><%= burrito.description %></p> -->
             </div>
+            <img src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top"  alt="...">
+            
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><%= moment(burrito.createdAt).format('MMMM Do YYYY, h:mm:ss a') %></li>
                 <li class="list-group-item"><%=burrito.restaurant%>- <span class="text-muted"><%= burrito.location %></span></li>
                 <li class="list-group-item">$<%= burrito.price %></li>
             </ul>

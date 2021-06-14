@@ -81,7 +81,6 @@ app.put('/burritos/:id', async(req, res) => {
 app.delete('/burritos/:id', async(req, res) => {
     const { id } = req.params;
     const burrito = await Burrito.findByIdAndDelete(id);
-    console.log(burrito)
     res.redirect('/burritos')
 });
 

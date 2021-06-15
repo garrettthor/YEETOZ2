@@ -1,9 +1,9 @@
 <%- layout('../views/layouts/boilerplate.ejs') %>
 
-<h1>Change thy burrito, lest ye make mistakes!</h1>
+<h1 class="text-center mt-3">Change thy burrito, lest ye make mistakes!</h1>
 
 <div class="container">
-    <form action="/burritos/<%= burrito._id %>?_method=PUT" method="POST">
+    <form action="/burritos/<%= burrito._id %>?_method=PUT" method="POST" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="burrito[title]" value="<%= burrito.title %>" required>
@@ -31,46 +31,9 @@
         <div class="my-3">
             <div class="input-group">
                 <span class="input-group-text">Gimme the deets</span>
-                <textarea class="form-control" name="burrito[description]" aria-label="With textarea"><%= burrito.description %></textarea>
+                <textarea class="form-control" name="burrito[description]" aria-label="With textarea" required><%= burrito.description %></textarea>
             </div>
         </div>
         <button class="btn btn-primary">Submit</button>
     </form>
 </div>
-
-<!-- <form  method="POST">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="burrito[title]"  required>
-    </div>
-    
-    <!--
-    <div>
-        <label for="title">Picture</label>
-        <input type="file" id="picture" name="burrito[picture]" accept="image/*;capture=camera">
-    </div>
-    
-    <div>
-        <label for="restaurant">Restaurant</label>
-        <input type="text" id="restaurant" name="burrito[restaurant]"  required>
-    </div>
-
-    <div>
-        <label for="location">Location</label>
-        <input type="text" id="location" name="burrito[location]"  required>
-    </div>
-
-    <div>
-        <label for="price">Price</label>
-        $<input type="text" id="price" name="burrito[price]"  required>
-    </div>
-
-    <div>
-        <label for="description">Description</label>
-        <textarea type="text" id="description" name="burrito[description]" required rows="4" cols="30"></textarea>
-    </div>
-
-    <div>
-        <button>Commit Changes</button>
-    </div>
-</form> -->

@@ -3,14 +3,14 @@
 <h1 class="text-center mt-3">Tell me 'bout it</h1>
 
 <div class="container">
-    <form action="/burritos" method="POST">
+    <form action="/burritos" method="POST" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="burrito[title]" required>
         </div>
         <div class="mb-3">
             <label class="form-label" for="picture">Upload</label>
-            <input type="file" class="form-control" id="inputGroupFile01" name="burrito[picture]">
+            <input type="file" class="form-control" id="picture" name="burrito[picture]" required>
               
         </div>
         <div class="mb-3">
@@ -31,7 +31,7 @@
         <div class="my-3">
             <div class="input-group">
                 <span class="input-group-text">Gimme the deets</span>
-                <textarea class="form-control" name="burrito[description]" aria-label="With textarea"></textarea>
+                <textarea class="form-control" name="burrito[description]" aria-label="With textarea" required></textarea>
             </div>
         </div>
         <button class="btn btn-primary">Submit</button>

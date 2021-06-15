@@ -13,8 +13,7 @@
             <img src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top"  alt="...">
             
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><%=burrito.restaurant%>- <span class="text-muted"><%= burrito.location %></span></li>
-                <li class="list-group-item">$<%= burrito.price %></li>
+                <li class="list-group-item"><%=burrito.restaurant%> - <span class="text-muted"><%= burrito.location %></span></li>
             </ul>
             <div class="card-body">
                 <div class="container">
@@ -30,29 +29,4 @@
             </div>
         </div>
     </div>
-<!--
-
-    <div class="row">
-        <div class="col-sm-4 mx-auto px-4">
-            <div class="card mb-3">
-                <div class="card-title">
-                    <a href="/burritos/<%= burrito._id %>"><%= burrito.title %></a>
-                </div>
-                <div>
-                    <span class="card-subtitle"><%= moment(burrito.createdAt).format('MMMM Do YYYY, h:mm:ss a') %></span>
-                </div>
-                <img id="card-burrito-pic" src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top" alt="A picture of a burrito">
-                <div>
-                    <%= burrito.restaurant %>, <span class="text-muted"><%= burrito.location %></span>
-                </div>
-                <div>
-                    $<%= burrito.price %>
-                </div>
-            </div>
-        </div>
-    </div> 
-
--->
-    
-
 <% } %> 

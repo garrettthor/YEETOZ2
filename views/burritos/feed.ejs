@@ -10,8 +10,7 @@
                 <h5 class="card-title"><%= burrito.title %></h5>
                 <!-- <p class="card-text"><%= burrito.description %></p> -->
             </div>
-            <img src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top"  alt="...">
-            
+            <a href="/burritos/<%= burrito._id %>"><img src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top"  alt="One of many tasty burritos..."></a>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><%=burrito.restaurant%> - <span class="text-muted"><%= burrito.location %></span></li>
             </ul>

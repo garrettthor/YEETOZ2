@@ -1,0 +1,41 @@
+<%- layout('../views/layouts/boilerplate.ejs') %>
+
+<h1>Change thy burrito, lest ye make mistakes!</h1>
+
+<form action="/burritos/<%= burrito._id %>?_method=PUT" method="POST">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="burrito[title]" value="<%= burrito.title %>" required>
+    </div>
+    
+    <!--
+    <div>
+        <label for="title">Picture</label>
+        <input type="file" id="picture" name="burrito[picture]" accept="image/*;capture=camera">
+    </div>
+    -->
+    
+    <div>
+        <label for="restaurant">Restaurant</label>
+        <input type="text" id="restaurant" name="burrito[restaurant]" value="<%= burrito.restaurant %> " required>
+    </div>
+
+    <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" name="burrito[location]" value="<%= burrito.location %> " required>
+    </div>
+
+    <div>
+        <label for="price">Price</label>
+        $<input type="text" id="price" name="burrito[price]" value="<%= burrito.price %> " required>
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea type="text" id="description" name="burrito[description]" required rows="4" cols="30"><%= burrito.description %></textarea>
+    </div>
+
+    <div>
+        <button>Commit Changes</button>
+    </div>
+</form>

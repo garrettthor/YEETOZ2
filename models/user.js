@@ -17,3 +17,4 @@ module.exports = mongoose.model('User', UserSchema);
 // fixing squaress
 // There was a bit of post-bday depression/anxiety to overcome...
 // I had a little imposter syndrome/encounted some gatekeeping on reddit that shook my confidence a little.
+// I really need to get this project done so I can move onto React.  MVC has taken me forever wrap my head around.  Never touched the backend before so I suppose thats understandable.

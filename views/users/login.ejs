@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %>
+
+<h1 class="mx-auto mt-3">Login Existing User</h1>
+<div class="col-3 mx-auto">
+    <form action="/login" method="POST" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+        </div>
+        <button class="btn btn-success">Submit</button>
+    </form>
+    <div class="mt-3">
+        <a href="#">Forgot your password?</a>
+    </div>
+    <div class="mt-3">
+        <a href="/register">New user?</a>
+    </div>
+
+</div>

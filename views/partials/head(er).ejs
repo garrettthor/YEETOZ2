@@ -15,21 +15,32 @@
           <li class="nav-item">
             <a class="nav-link" href="/burritos/new">New Burrito</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown ml-auto">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Account
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Login</a></li>
-              <li><a class="dropdown-item" href="#">Register</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Tell a friend!</a></li>
+                <li><a class="dropdown-item
+                    <% if(!currentUser) { %> 
+                        disabled
+                        <% } %> 
+                    " href="/profile">Profile</a></li>
+                <li><a class="dropdown-item
+                    <% if(currentUser) { %> 
+                        disabled
+                        <% } %> 
+                    " href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="/register">Register</a></li>
+                <li><a class="dropdown-item 
+                    <% if(!currentUser) { %> 
+                    disabled
+                    <% } %> 
+                    " href="/logout">Logout</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Tell a friend!</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+</nav>

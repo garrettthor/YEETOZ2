@@ -11,3 +11,12 @@ module.exports.validateBurrito = (req, res, next) => {
         next();
     };
 }
+
+module.exports.ensureLoggedIn = (req, res, next) => {
+    if(!req.isAuthenticated()) {
+        req.flash('error', 'You must sign in first.');
+        res.redirect('/login');
+    };
+    next();
+};
+

@@ -6,15 +6,17 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const passportLocal = require('passport-local');
-const passportLocalMongoose = require('passport-local-mongoose');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const ExpressError = require('./utilities/ExpressError');
 const moment = require('moment');
 const PORT = 1984;
 
+const User = require('./models/user');
+
 // Route requirements
 const burritosRoutes = require('./routes/burritoRoutes')
+const userRoutes = require('./routes/userRoutes');
 
 
 //------------Database Connection----------------------
@@ -51,8 +53,18 @@ const sessionConfig = {
     }
     // store:
 }
+
+// Session and flash
 app.use(session(sessionConfig));
 app.use(flash());
+
+//Passport and local strategy
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new passportLocal(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // This middleware makes moment.js work.  Don't ask me how, thats some stackoverflow copypasta magic babay
 app.use((req, res, next) => {
@@ -62,6 +74,7 @@ app.use((req, res, next) => {
 
 // This middleware makes the flash messages available everywhere w a local variable
 app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
@@ -69,12 +82,15 @@ app.use((req, res, next) => {
 
 // ROUTING
 //Set burritos routes
-app.use('/burritos', burritosRoutes)
+app.use('/burritos', burritosRoutes);
+app.use('/', userRoutes);
 
 // Routes
 app.get('/', (req, res) => {
     res.render('home');
 });
+
+
 
 // Error handling
 app.all('*', (req, res, next) => {

@@ -13,11 +13,13 @@ const BurritoSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-    }
-    // creator: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
+    },
+    creator: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    likers: [],
+    dislikers: []
 });
 
 module.exports = mongoose.model('Burrito', BurritoSchema);

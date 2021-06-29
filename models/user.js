@@ -21,3 +21,4 @@ module.exports = mongoose.model('User', UserSchema);
 // I'm going to make a schedule and break the rest of this thing up into chunks so that I have a definative time-line and goals to meet.
 // Maybe one week to get the rest of the key features operational.
 // One week to ensure responsive design/really tighten up the design.
+// And last week to deploy.

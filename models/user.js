@@ -22,6 +22,7 @@ module.exports = mongoose.model('User', UserSchema);
 // Maybe one week to get the rest of the key features operational.
 // 1. Figure out how to make an account only allow 1 like/disklike.
 // 2. Authorize likes/dislikes when logged in, hide when not.
+// 3. Fix the NaN % total rating thing...
 // One week to ensure responsive design/really tighten up the design.
 // And last week to deploy.
 

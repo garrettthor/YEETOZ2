@@ -23,6 +23,7 @@ module.exports = mongoose.model('User', UserSchema);
 // 1. Figure out how to make an account only allow 1 like/disklike.
 // 2. Authorize likes/dislikes when logged in, hide when not.
 // 3. Fix the NaN % total rating thing...
+// 4. Cloudinary and image upload.  Especially camera access for mobile.
 // One week to ensure responsive design/really tighten up the design.
 // 1. Where are the like/dislike buttons going at mobile aspect?
 // And last week to deploy.

@@ -27,4 +27,5 @@ module.exports = mongoose.model('User', UserSchema);
 // One week to ensure responsive design/really tighten up the design.
 // 1. Where are the like/dislike buttons going at mobile aspect?
 // And last week to deploy.
+// 1. Get up on Heroku, I assume?
 

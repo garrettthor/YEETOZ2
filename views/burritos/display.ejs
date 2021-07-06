@@ -10,6 +10,7 @@
                 <img src="http://ramonstacoshop.com/wp-content/uploads/2017/11/california-burrito-slider.jpg" class="card-img-top"  alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><%= burrito.title %></h5>  
+                    <h5 class="card-title"><%= burrito.creator.username %></h5>  
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><%=burrito.restaurant%> - <span class="text-muted"><%= burrito.location %></span></li>
@@ -20,7 +21,7 @@
                     <% } %>
                     <% if(burrito.likes > 0 || burrito.dislikes > 0) { %>
                     <li class="list-group-item text-center">
-                        <% const score = Number(( burrito.likes / ( burrito.likes + burrito.dislikes ) * 100 ).toFixed(2)) %>
+                        <% const score = Number(( burrito.likes / ( burrito.likes + burrito.dislikes ) * 100 ).toFixed(1)) %>
                         <%= score %>%</li>
                         <% } %> 
                 </ul>

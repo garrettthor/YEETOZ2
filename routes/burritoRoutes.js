@@ -20,12 +20,13 @@ router.get('/new', ensureLoggedIn, (req, res) => {
 router.post('/', ensureLoggedIn, validateBurrito, catchTryAsync(async(req, res, next) => {
     req.flash('success', 'A wild Burrito has appeared!');
     const burrito = new Burrito(req.body.burrito);
+    burrito.creator = req.user._id;
     await burrito.save();
     res.redirect('burritos');
 }));
 
 router.get('/:id', catchTryAsync(async(req, res) => {
-    const burrito = await Burrito.findById(req.params.id);
+    const burrito = await (await Burrito.findById(req.params.id)).populate('creator');
     if(!burrito) {
         req.flash('error', 'Burrito doesn\'t exist...');
         return res.redirect('/burritos');

@@ -14,7 +14,7 @@ const BurritoSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    creator: {
+    author: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
